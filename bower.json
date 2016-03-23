@@ -1,0 +1,17 @@
+{
+  "name": "workspace",
+  "description": "job Finding App",
+  "main": "index.js",
+  "authors": [
+    "Valentina Monetta"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "jquery": "^2.2.2",
+    "angular": "^1.5.2",
+    "bootstrap": "^3.3.6"
+  }
+}
