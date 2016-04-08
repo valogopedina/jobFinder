@@ -1,6 +1,6 @@
 var expect = require("chai").expect;
 var mongoose = require("mongoose");
-var jobModel = require('../models/Job');
+var jobModel = require('../../models/Job');
 var Promise = require('bluebird');
 var jobsData = require('../../jobs-data.js');
 
@@ -19,13 +19,17 @@ describe('get jobs', function(){
    before(function(done) {
       connectDB('mongodb://localhost/jobfinder')
       .then(resetJobs)
-      .then(jobModel.seedJobs)
+      .then(jobsData.seedJobs)
       .then(jobsData.findJobs)
       .then(function(collection) {
          jobs = collection;
          done();
       });
-   })
+   });
+   
+   after(function(){
+      mongoose.connection.close();
+   });
    
 
    it("should never be empty since jobs are seeded", function(){

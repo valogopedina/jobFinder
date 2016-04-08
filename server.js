@@ -22,7 +22,7 @@ var con = mongoose.connection;
 
 con.once('open', function() {
     console.log('connected to mongodb successfully!')
-    jobModel.seedJobs();
+    jobsData.seedJobs();
 })
 
 
