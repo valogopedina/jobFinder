@@ -2,9 +2,9 @@ var express = require('express');
 var mongoose = require('mongoose');
 var jobModel = require('./models/Job');
 var jobsData = require('./jobs-data.js');
+require('./jobs-service.js')(jobsData, app);
 
 var app = express();
-require('./jobs-service.js')(jobsData, app);
 
 app.set('views', __dirname);
 app.set('view engine', 'jade');
